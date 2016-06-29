@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/* 
+ 头部CSS组件
+ */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0; }
+
+header {
+  font-size: 19px;
+  background: #ec7419;
+  color: #FFF;
+  height: 54px; }
+
+.logo {
+  line-height: 54px;
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 10vw; }
+  .logo:before {
+    content: '?';
+    display: inline-block;
+    color: #ec7419;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 10px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: #FFF; }
+
+.hd_title {
+  margin-left: 30px; }

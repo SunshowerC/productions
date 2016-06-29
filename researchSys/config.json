@@ -1,0 +1,32 @@
+[
+  {
+    "researchID" :  1,
+    "researchTitle" : "关于XXX的调查问卷",
+    "deadline" : "2016-3-24",
+    "state" : 1,
+    "description" : "测试测试测试测试测试测试测试测试测试测试测试测试测试测试",
+    "questionTeam" : [
+      {
+        "titleDesc":"题目描述",
+        "isMust" : true,
+        "questType" :  1,
+        "questOption" :  [
+          "18岁以下",
+          "18-25",
+          "25-35",
+          "35-50",
+          "50岁以上"
+        ],
+        "answerNum" :[
+          3,
+          4,
+          5,
+          1,
+          2
+        ]
+
+      }
+    ]
+
+  }
+]

@@ -1,0 +1,374 @@
+
+* {
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+    
+    	
+}
+
+/* 字体
+@font-face {
+  font-family: 'iconfont';
+  src: url("//at.alicdn.com/t/font_1458294480_350837.eot");
+  IE9
+  src: url("//at.alicdn.com/t/font_1458294480_350837.eot?#iefix") format("embedded-opentype"), url("//at.alicdn.com/t/font_1458294480_350837.woff") format("woff"), url("//at.alicdn.com/t/font_1458294480_350837.ttf") format("truetype"), url("//at.alicdn.com/t/font_1458294480_350837.svg#iconfont") format("svg");
+  iOS 4.1-
+}
+ */
+/*
+@font-face {
+  font-family: 'iconfont';
+  src: url("../fonts/font_1458294480_350837.eot");
+//  IE9
+  src: url("../fonts/font_1458294480_350837.eot?#iefix") format("embedded-opentype"), url("../fonts/font_1458294480_350837.woff") format("woff"), url("../fonts/font_1458294480_350837.ttf") format("truetype"), url("../fonts/font_1458294480_350837.svg#iconfont") format("svg");
+//  iOS 4.1-
+}
+.iconfont {
+	font-family: "iconfont" !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+ //   Better Font Rendering ===========
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-back:before {
+  content: "\e601";
+}
+
+*/
+html {
+	font-size: 100%;
+	font-family: "Microsoft Yahei","Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+}
+
+a, img {
+    -webkit-touch-callout:none; /* 禁止长按链接与图片弹出菜单 */
+    text-decoration: none;
+}
+html, body {
+    -webkit-user-select: none;   /* 禁止选中文本（如无文本选中需求，此为必选项） */
+    user-select: none;
+    background-color: #f5f5f5;
+    overflow-x:hidden;
+}
+
+
+
+body>* {
+	background-color: #fff;
+}
+
+header {
+	font-size: 1.5rem ;
+	height: 3.75rem;
+	color: #fff;
+	line-height: 3.75rem;
+	background-color: #91d4da;
+	text-align: center;
+}
+
+header a {
+	position: absolute;
+	left: 1.2rem;
+	color: #fff;
+}
+
+header h1 {
+	font-size: 1.6rem;
+}
+
+hr {
+	margin: 0 auto;
+	color: #eee;
+	opacity: 0.3;
+	width: 95%;
+
+}
+
+nav ul {
+	height: 3.75rem;
+	 display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	
+	-webkit-flex-flow: row nowrap;
+	-ms-flex-flow:row nowrap;
+	flex-flow: row nowrap;
+
+	list-style: none;
+	background: #fff;
+}
+
+nav ul li {
+	width: 20%;
+	
+	text-align: center;
+	font-size: 1.4rem;
+	line-height: 3.75rem;
+	color: #676767;
+}
+
+nav ul li.active {
+	border-bottom: 4px solid #91d4da;
+}
+
+.banner img {
+	width: 100%;
+	height: auto;
+}
+
+.tag ul {
+	height: 9.5rem;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	
+	-webkit-flex-flow: row nowrap;
+	-ms-flex-flow:row nowrap;
+	flex-flow: row nowrap;
+
+	-webkit-justify-content:space-around;
+	-ms-justify-content:space-around;
+	justify-content: space-around;	
+
+	list-style: none;	
+	background: #fff;
+	
+
+}
+
+.tag ul li {
+	text-align: center;
+	width: 20%;
+	padding: 1.875rem 0 0 0 ;
+}
+
+.tag ul li div {
+	height: 3.75rem;
+	width: 3.75rem;
+	border: 0;
+	-webkit-border-radius:1.875rem;
+	border-radius: 1.875rem;
+	margin: 0 auto 1.0rem auto ;
+	background: url(../img/task11/list.png) #00c7d6 50% 50% no-repeat;
+	background-size: 50% 50%;
+}
+
+.colume {
+//	height: 13.75rem;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms--flex;
+	display: flex;
+	
+	-webkit-flex-flow: row nowrap;
+	-ms-flex-flow:row nowrap;
+	flex-flow: row nowrap;
+
+	text-align: center;
+	padding: 1.25rem 0 1.25rem 0;
+	background: #fff;
+}
+
+.colume>div {
+	width: 33%;
+	height: 100%;
+}
+
+.colume>div:not(:last-child) {
+	border-right: 3px solid #efefef;
+}
+
+
+
+.colume img {
+	height: 4.375rem;
+	margin: 0 auto 1.25rem auto;
+}
+
+.colume h2 {
+	color: #333;
+	font-size: 1.8rem;
+}
+
+.colume h3 {
+	color: #ccc;
+	padding: 0.8rem 0 0 0 ;
+	font-size: 1.0rem;
+}
+
+.module{
+	padding: 1.25rem;
+	margin: 1.25rem 0;
+
+}
+
+.module h1 {
+	font-size: 1.375rem;
+	color:#333;
+	padding: 0 0 0.6rem 0 ;
+	border-bottom: 2px solid #efefef;
+}
+
+.module-content {
+	
+	
+	text-align: center;
+	
+	display: -webkit-box;
+	display: -webkit-flex;
+	display:  -ms-flex;
+	display: flex;
+
+	-webkit-flex-flow: row nowrap;
+	-ms-flex-flow: row nowrap;
+	flex-flow: row nowrap;
+
+	-webkit-align-items: center;
+	-ms-align-items: center;	
+	align-items: center;
+
+	padding: 1.25rem 0 0 0 ;
+}
+
+.module-content>img {
+	display: block;
+	
+
+	height: 6.25rem;
+//	margin: 0 auto;
+
+}
+
+/*
+.module-content>div  {
+	width:75%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+
+	
+	-webkit-flex-flow: row wrap;
+	-ms-flex-flow:row wrap;
+	flex-flow: row wrap;
+
+	
+	-webkit-justify-content:space-around;
+	-ms-justify-content:space-around;
+	justify-content: space-around;
+}
+*/
+
+.module-content>div  {
+	width:75%;
+
+}
+
+.module-content p {
+	color: #222;
+	width: 45%;
+	height: 3.0rem;
+	line-height: 3.0rem;
+	background: #f8f8f8;
+	margin: 0 1% 1% 2%;
+	float: left;
+	
+}
+
+.article {
+	background-color: #f5f5f5;
+}
+
+.article article {
+	padding: 1.25rem;
+	margin: 0 0  0.3125rem 0;
+	background: #fff;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	
+	
+	-webkit-flex-flow: row nowrap;
+	-ms-flex-flow: row nowrap;
+	flex-flow: row nowrap;
+
+}
+
+.article article img {
+	display: block;
+	height: 5.5rem;
+
+}
+
+.article article div {
+	width: 70%;
+	height: 6.0rem;
+	padding: 0 0 0 0.625rem;
+	position: relative;
+}
+
+.article article div h2,.article-t2 h2 {
+	color: #777;
+}
+
+.article article div>span {
+	position: absolute;
+	left: 0.625rem;
+	bottom: 0;
+	color: #aaa;
+}
+
+.article-t2{
+	margin: 0 0 1.875rem 0;
+	padding: 1.25rem;
+}
+
+.article-t2 h2 {
+	text-align: center;
+}
+
+.article-t2 ul {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+
+	
+	-webkit-justify-content:center;
+	-ms-justify-content:center;
+	justify-content: center;
+
+	list-style: none;
+	width: 100%;
+	padding: 0.625rem 0;
+
+}
+
+.article-t2 ul li {
+//	padding: 1.25rem 1rem;
+	width: 32%;
+	margin: 1%;
+}
+
+.article-t2 ul li img {
+	width: 100%;
+//	display: block;
+//	margin: 0 auto;
+}
+
+.article-t2>span {
+	color: #aaa;
+
+}

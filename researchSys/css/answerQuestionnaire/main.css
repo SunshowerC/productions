@@ -1,0 +1,54 @@
+fieldset {
+  border: none; }
+
+body {
+  font-size: 20px; }
+
+.container {
+  border-radius: 5px;
+  width: 960px;
+  border: 2px solid #ccc;
+  margin: 5rem auto;
+  padding: 1rem; }
+
+.researchHeader {
+  height: 2rem;
+  padding: 2rem 4rem; }
+  .researchHeader .researchTitle {
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #ccc; }
+
+.researchContentWrapper .researchContent {
+  padding: 1rem 3rem; }
+
+.researchContentWrapper .questionTeam > div[class^='question'] {
+  padding: 0 2rem; }
+  .researchContentWrapper .questionTeam > div[class^='question']:hover {
+    background: pink; }
+    .researchContentWrapper .questionTeam > div[class^='question']:hover .questionTitle {
+      font-weight: 600; }
+  .researchContentWrapper .questionTeam > div[class^='question'] .questOptTeam {
+    padding: 0.5rem 1.5rem; }
+    .researchContentWrapper .questionTeam > div[class^='question'] .questOptTeam label {
+      padding: 0.25rem; }
+  .researchContentWrapper .questionTeam > div[class^='question'] .questAnsContainer {
+    padding: 2rem 2rem; }
+  .researchContentWrapper .questionTeam > div[class^='question'] label textarea {
+    border: 1px solid #000;
+    width: 40rem;
+    height: 8rem; }
+
+footer {
+  padding: 2rem 4rem;
+  border-top: 2px solid #ccc;
+  text-align: center; }
+  footer input[type='button'] {
+    border-radius: 3px;
+    border: 1px solid #555;
+    background: #fff;
+    padding: 0.125rem 0.5rem;
+    color: #999; }
+    footer input[type='button']:hover {
+      background: #ec7419;
+      color: #fff; }

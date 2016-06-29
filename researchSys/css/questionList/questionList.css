@@ -1,0 +1,109 @@
+
+@import "header.css";
+@import "pop.css";
+
+.transition, .questionnaireTab a, .questionnaireTab tbody tr {
+  -webkit-transition-duration: .7s;
+  -moz-transition-duration: .7s;
+  transition-duration: .7s;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  background: #efefef;
+}
+
+.questionnaireTab {
+  margin: 80px auto 0;
+  width: 929px;
+  color: #6a6a6a;
+  text-align: left;
+  border-collapse: collapse;
+  box-shadow: 0 1px 5px #aaa;
+}
+.questionnaireTab a {
+  color: #6a6a6a;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  width: 70px;
+  padding: 1px 0;
+  border: 1px solid #6a6a6a;
+  border-radius: 3px;
+}
+.questionnaireTab a:hover {
+  background: #f07600;
+  color: white;
+    cursor:pointer;
+}
+.questionnaireTab thead tr, .questionnaireTab tbody tr, .questionnaireTab tfoot tr {
+  height: 50px;
+}
+.questionnaireTab thead tr th:nth-of-type(1) {
+  width: 8%;
+}
+.questionnaireTab thead tr th:nth-of-type(2) {
+  width: 37%;
+}
+.questionnaireTab thead tr th:nth-of-type(3) {
+  width: 16%;
+}
+.questionnaireTab thead tr th:nth-of-type(4) {
+  width: 12%;
+}
+.questionnaireTab thead tr th:nth-of-type(5) {
+  width: 5.4%;
+}
+.questionnaireTab thead tr th:last-child {
+  width: 22.2%;
+  padding-right: 25px;
+}
+.questionnaireTab thead tr th:last-child a.newQuest {
+  width: auto;
+  padding: 3px 5px;
+  float: right;
+}
+.questionnaireTab tbody {
+  background: #fff;
+}
+.questionnaireTab tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+.questionnaireTab tbody tr:hover {
+  background: #fcf0e5;
+}
+.questionnaireTab tbody tr td:nth-of-type(1) {
+  width: 8%;
+  padding-left: 25px;
+}
+.questionnaireTab tbody tr td:nth-of-type(5) {
+  text-align: right;
+  width: 251px;
+  padding-right: 25px;
+}
+.questionnaireTab tbody .active {
+  color: #55e344;
+}
+.questionnaireTab tfoot {
+  background: #fff;
+}
+.questionnaireTab tfoot tr td:nth-of-type(1) {
+  width: 8%;
+  padding-left: 25px;
+}
+
+/*# sourceMappingURL=index.css.map */

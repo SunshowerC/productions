@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>微型调查问卷平台</title>
+
+
+	<link rel="stylesheet" type="text/css" href="css/questionList/questionList.css">
+	<script src="node_modules/requirejs/require.js" defer async="true"
+			data-main="js/questionnaireList/questList-main.js"></script>
+	<script src="node_modules/requirejs/require.js"></script>
+	<!--	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/questionnaireList/jq-drag.js"></script>
+        <script type="text/javascript" src="js/questionnaireList/pop.js"></script>
+        <script type="text/javascript" src="js/config.js"></script>
+        <script src="js/underscore-min.js"></script>-->
+
+</head>
+<body>
+	<header>
+		<h1><a  href="questList.html">问卷管理</a></h1><h2>我的问卷</h2>
+	</header>
+	<div class="questionnaireList">
+
+	</div>
+	<div id="dialog-modal"></div>
+	<script type="text/template" id="questListTpl">
+
+		<table class="questionnaireTab">
+			<thead>
+				<tr>
+					<th></th>
+					<th>标题</th>
+					<th>截止时间</th>
+					<th>状态</th>
+					<th>操作</th>
+					<th><a href= <%= newQuestHref %>  class="newQuest">╋ 新建问卷</a></th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<% _.each(researchs,function(item){ %>
+					<tr>
+						<td><input type="checkbox" id=" <%= item.researchId  %> " /></td>
+						<td><label for=" <%= item.researchId %> " > <%= item.researchTitle %> </label></td>
+						<td> <%= item.deadline %> </td>
+
+						<% switch(item.state) {
+								case 1 : %>
+								<td >未发布</td>
+								<td colspan="2">
+								<a href= <%= editQuestHref %> class="editQuest">编辑</a>
+								<a  class="deleteQuest" >删除</a>
+								<a href= <%=  answerQuestionnaireHref %>  class="checkQuest"
+								   style="pointer-events:none;color:#ddd;border-color:#ddd;">查看问卷</a>
+								<%	break;
+
+								case 2 :   %>
+								<td class="active">发布中</td>
+								<td colspan="2">
+								<a  class="deleteQuest" >删除</a>
+								<a href=  <%=  checkDataHref  %>  class="checkData">查看数据</a>
+								<a href=  <%=  answerQuestionnaireHref   %> class="checkQuest" >查看问卷</a>
+								<%  break;
+
+								case 3 :  %>
+								<td >已结束</td>
+								<td colspan="2">
+								<a href= <%=  editQuestHref   %> class="editQuest">编辑</a>
+								<a  class="deleteQuest" >删除</a>
+								<a href= <%=  checkDataHref  %>  class="checkData">查看数据</a>
+								<% break;
+							}  %>
+						</td>
+					</tr>
+				<% }); %>
+
+			</tbody>
+
+			<tfoot>
+				<tr>
+					<td><input type="checkbox" id="checkedAll" /></td>
+					<td><label for="checkedAll">全选</label></td>
+					<td colspan="4">
+						<a  class="deleteQuests">删除</a>
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+
+	</script>
+	<!--<script type="text/javascript" src="js/questionnaireList/delete.js"></script>-->
+	<script>
+	/*
+	模拟数据
+	 */
+/*	function init(data) {
+
+		//如果localStorage.data 是空的，初始化赋值填充数据
+		// console.log(localStorage.getItem('data'))
+		if ( !localStorage.getItem('paperMsg')) {
+			localStorage.setItem('paperMsg',JSON.stringify(data.paperMsg) ) ;
+			console.log('set localStorage.paperMsg successfully')
+		}
+
+		var researchs = JSON.parse( localStorage.getItem('paperMsg') ) ;
+//		console.log(researchs)
+		initQuestList($('.questionnaireList'),researchs); //表格渲染
+	}
+
+	//没有模拟数据时，需要提供一个空的对象
+//	console.log(typeof data)
+	if (typeof data == 'undefined') {
+		var data = {paperMsg:[]};
+	}
+
+	init(data);
+
+//	 测试结果，有模拟数据，如config.js 时，加载模拟数据中的问卷。
+//	 没有模拟数据时，问卷数为0*/
+
+	</script>
+</body>
+</html>

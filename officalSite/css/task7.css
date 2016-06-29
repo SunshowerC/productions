@@ -1,0 +1,603 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	font:14px/1.5 "Microsoft Yahei";
+}
+
+ul,li {
+	list-style: none;
+}
+
+header,footer,body>div{
+	width: 100%;
+	min-width: 1200px;
+}
+
+
+header {
+	height: 50px;
+//	background-image: url(../img/task7/logo.png)  ;
+
+}
+
+header h1{
+	background: url(../img/task7/logo.png) 0px 8px no-repeat  ;
+	font-size: 20px;
+	line-height: 50px;
+	width:100px;
+	text-align: right;
+	font-weight: bolder;
+	margin: 0 0 0 100px;
+}
+
+nav ul {
+	position: absolute;
+	top:20px;
+	right:30px;
+	width:550px;
+}
+
+nav li {
+	float:left;
+	height: 37px;
+	text-align: center;
+	width: 4em;
+	margin:0 0 0 30px;
+	color: #888; 
+}
+nav li a{
+	color: #888;
+}
+
+nav ul li:last-child {
+	background: url(../img/task7/login.png) no-repeat 0 0;
+	text-indent: 1.5em;
+	color: red;
+}
+
+nav li.active {
+	color: red;
+	border-bottom: 3px solid red;
+}
+
+nav li.active a {
+	color: red;
+}
+
+div#nav {
+	height: 690px;
+	
+	background-color: rgba(0,0,0,0.3);
+	background: url(../img/task7/banner.jpg)  no-repeat top center;
+	background-size:cover;
+
+	margin: 10px 0 0 0 ;
+	color:#fff;
+	
+
+}
+#nav>div {
+	height: 690px;
+	background-color: rgba(0,0,0,0.3);
+	padding: 0px 0 0 100px;
+	
+}
+
+#nav>div h1 {
+	font-size: 73px;
+	padding: 200px 0 0 0;
+}
+
+#nav p {
+	font-size: 20px;
+}
+
+.begin_exper {
+	width: 320px;
+	height: 68px;
+	display: block;
+	font-size: 38px;
+	color: #fff;
+	background-color: #e74f4d;
+	text-align: center;
+	line-height: 68px;
+	margin: 50px 0 0 0;
+}
+
+#advant {
+	height: 250px;
+	margin: 30px 0 0 0;
+	padding: 20px 0 20px 0;
+}
+
+#advant ul li {
+	float: left;
+	width: 25%;
+	box-sizing: border-box;
+//	padding: 0 85px;
+	text-align: center;
+	color: #666;
+}
+
+#advant ul li:first-child {
+	background: url(../img/task7/circle.png) top center no-repeat;
+}
+
+#advant ul li:nth-child(2) {
+	background: url(../img/task7/flag.png) top center no-repeat;
+}
+
+#advant ul li:nth-child(3) {
+	background: url(../img/task7/flower.png) top center no-repeat;
+}
+
+#advant ul li:last-child {
+	background: url(../img/task7/block.png) top center no-repeat;
+}
+
+#advant ul li p {
+	margin: 100px 0px 0 0px ;
+	padding: 0 85px;
+}
+
+#advant ul li:not(:last-child)  p {
+	border-right: 2px solid #aaa;
+}
+
+#about {
+	height: 350px;
+	background: url(../img/task7/books.png) #ddd no-repeat  center 70px;
+	color: #999;
+}
+
+#about p {
+	text-align: center;
+	font-size: 60px;
+	padding: 180px 0 0 0;
+}
+
+#search {
+	height: 341px;
+	background: url(../img/task7/map.jpg) no-repeat top center;
+	background-size: cover;
+	margin: ;
+	text-align: center;
+
+}
+
+#search>div {
+	height: 341px;
+	background-color: rgba(190,78,72,0.2);
+	color: #fff;
+	padding: 50px 12% 0 12% ;
+	box-sizing: border-box;
+}
+
+#search h3 {
+	font-size: 22px;
+
+}
+
+
+
+#search hr {
+	width:30px;
+	border: 1px solid #fff;
+	margin: 0 auto;
+}
+
+#search p {
+	margin: 20px 0 0 0 ;
+	font-size: 12px;
+}
+
+#search ul li {
+
+}
+
+#activity {
+	height: 600px;
+	background: #eee;
+	padding: 100px  0;
+	box-sizing: border-box;
+}
+
+#activity ul {
+	width: 963px;
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#activity ul li {
+	
+	box-sizing: border-box;
+	float:left;
+
+}
+
+#activity ul li:not(:last-child) {
+	margin: 0 37px 0 0;
+}
+
+#activity img {
+	padding: 4px;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+#activity li figcaption.title {
+	text-align: center;
+	font-size: 18px;
+	color: #222;
+
+}
+
+#activity li figcaption.detail {
+	text-align: center;
+	color:#aaa;
+	
+}
+
+#new_world {
+	height: 567px;
+}
+
+.left {
+	height: 567px;
+	width: 66%;
+	background: url(../img/task7/new-time.jpg) no-repeat top center;
+	background-size: cover;
+	color:#fff;
+	text-align: center;
+
+}
+
+.left h2{
+	padding: 130px 0 0 0 ;
+	font-size: 45px;
+	font-weight: normal;
+}
+
+.left h1 {
+	font-size :120px;
+	line-height: 1;
+	font-weight: normal;
+}
+
+.left p,.left time {
+	font-size: 20px;
+}
+
+.right  {
+	height: 567px;
+	width:34%;
+	float:right;
+	background: #fff;
+	padding: 160px 70px 0 70px;
+	box-sizing: border-box;
+}
+
+.red {
+	color:red;
+}
+
+.right h2 {
+	text-align: center;
+	font-weight: normal;
+}
+
+.right p:not(.more_detail) {
+	text-indent: 2em;
+	color: #aaa;
+	line-height: 2.5em;
+	margin: 30px 0 0 0;
+}
+
+a.more_detail {
+	display: block;
+	width: 100px;
+	height:35px;
+	
+
+	line-height: 35px;
+	margin: 30px auto 50px auto;
+
+	border: 1px solid red;
+	text-align: center;
+}
+
+.choice {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	border: 1px solid #777;
+	border-radius: 10px;
+	margin: 0 10px 0 10px;
+
+}
+
+.right div:last-child {
+	text-align: center;
+}
+
+.choice.active {
+	background: #777;
+}
+
+#love_life {
+	height: 521px;
+	font-size: 21px;
+	text-align: center;
+}
+
+.l_left hr {
+	width:33px;
+	border: 1px solid #fff;
+	margin: 30px auto 0 auto ;
+}
+
+.l_middle hr {
+	width:33px;
+	border: 1px solid #666;
+	margin: 30px auto 0 auto ;
+}
+
+.l_left {
+	width: 33%;
+	height: 521px;
+	float: left;
+	color: white;
+	background: #e74f4d;
+
+}
+
+.l_middle {
+	width: 33%;
+	height: 521px;
+	float: left;
+	color: #111;
+}
+
+.l_right {
+	width: 34%;
+	height: 521px;
+	float: right;
+	background: url(../img/task7/new-age.jpg) no-repeat top center;
+	background-size: cover;
+}
+
+.l_left p:first-child,.l_middle p:first-child {
+	padding: 160px 0 0 0;
+	
+}
+
+#love_life a {
+	margin: 50px auto 0  auto;
+	display: block;
+	width: 160px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	border-radius: 3px;
+}
+.l_left a {
+	border: 1px solid #fff;
+	color: #fff;
+}
+
+.l_middle a {
+	border: 1px solid #666;
+	color: #666;
+}
+
+#join_us {
+	clear: both;
+	height: 250px;
+	padding: 110px 0 0 0;
+	text-align: center; 
+	color: #111;
+}
+
+#join_us hr {
+	border: 1px solid #666;
+	width: 33px;
+	margin: 20px auto 33px auto ;
+}
+
+#join_us p {
+	color:#999 ;
+}
+
+div#apply {
+	width: 1080px;
+	height: 320px;
+	margin: 50px auto;
+
+}
+
+.agreement {
+	width:300px;
+	padding-left: 100px;
+}
+
+.agreement h3{
+	margin: 0  0 20px 0;
+	color: #222;
+}
+
+.agreement p {
+	color: #888;
+	text-indent: 2em;
+	font-size: 12px;
+	margin: 0 0  30px 0;
+}
+
+#apply div:first-child {
+	float:right;
+	width: 650px;
+	padding-right: 70px;
+}
+
+#apply input[type="text"] {
+	width: 300px;
+	height: 40px;
+	background: #ededee;
+	border: 0;
+	border-radius: 3px;
+	margin: 0 15px 15px 0;
+}
+
+textarea {
+	background: #ededee;
+	border: 0;
+	border-radius: 3px;
+	height: 150px;
+	width:615px;
+	font-size: 16px;
+	box-sizing: border-box;
+	padding: 20px;
+}
+
+#apply input[type="submit"] {
+	text-align: center;
+	background: #ededee;
+	border: 0;
+	border-radius:3px;
+	height: 40px;
+	width: 615px;
+	font-size: 16px;
+	color: #7D7C7C;
+	line-height: 40px;
+	margin: 15px 0 0 0 ;
+}
+
+#contact {
+	background: #32353e;
+	text-align: center;
+	color:#fff;
+	padding: 100px 0 0 0 ;
+	height: 320px;
+}
+
+#contact h2 {
+	margin: 0 0 20px 0 ;
+	font-weight: normal;
+}
+
+#contact p {
+	font-size:12px;
+}
+
+#contact form {
+	margin: 30px auto;
+}
+
+#contact input[type="email"] {
+	width: 430px;
+	height: 40px;
+	border: 0;
+	font-size: 16px;
+}
+
+#contact input[type="submit"] {
+	color:#fff;
+	background: #666;
+	width: 80px;
+	font-size: 16px;
+	font-weight: bold;
+	height: 40px;
+	border: 0;
+}
+
+footer {
+	background: #2f3038;
+	height: 56px;
+
+}
+
+footer a {
+	color: #fff;
+	line-height: 56px;
+}
+
+footer a:first-child{
+	margin: 0 0 0 80px;
+}
+
+footer a:last-child {
+	display: inline-block;
+	float: right;
+	margin: 0 80px 0 0 ;
+}
+
+#select {
+	margin: 50px auto 0 auto;
+	width: 995px;
+}
+
+#select a{
+	display: inline-block;
+	width: 230px;
+	height: 35px;
+	background: #fff;
+	color:#aaa;
+	text-indent: 1em;
+	font-size: 16px;
+	line-height: 35px;
+	text-align: left;
+	margin: 0 20px 0 0;
+	position: relative;
+	box-sizing: border-box;
+	border: 1px solid #be4e48;
+}
+
+#select a:last-child {
+	background: #be4e48;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	margin: 0 0 0 0;
+}
+
+#select ul{
+	position: absolute;
+	top: 35px;
+	left: -1px;
+	width: 230px;
+	box-sizing: border-box;
+	border: 1px solid #be4e48 ;
+	border-top: 0;	
+}
+
+#select ul li{
+	width: 228px;
+	box-sizing: border-box;
+
+	background-color: #fff;
+}
+
+#select ul li:hover {
+	background: #be4e48;
+	color: #fff;
+}
+
+a:hover {
+	opacity: 0.8;
+}
+
+
+input[type="submit"]:hover,.choice{
+	cursor:pointer; 
+
+}
+
+

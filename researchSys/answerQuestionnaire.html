@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/underscore-min.js"></script>
+<!--     <script src="js/answerQuestionnaire/lib/jquery1.10.2.min.js.js"></script>
+    <script src="js/questionnaireList/pop.js"></script>
+    <script src="js/questionnaireList/jq-drag.js"></script> -->
+<!--     <link rel="stylesheet" type="text/css" href="css/answerQuestionnaire/lib/home.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/answerQuestionnaire/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/questionList/header.css">
+    <link rel="stylesheet" type="text/css" href="css/answerQuestionnaire/main.css">
+    <style>
+        label{
+            display:block;
+        }
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        header h1,header h2 {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0;
+        }
+    </style>
+
+</head>
+<body>
+<header>
+    <h1><a  href="questList.html">问卷管理</a></h1><h2>我的问卷</h2>
+</header>
+    <div id="dialog-modal"></div>
+    <script type="text/template" id="template">
+        <div class="container">
+            <div class="research">
+                <div class="researchHeader">
+
+                    <div class="researchTitle"><%= researchTitle %></div>
+
+                    <!--<div class="reatchDescription"><%= description %></div>-->
+                </div>
+                <div class="researchContentWrapper">
+                    <div class="researchContent">
+                        <fieldset class="questionTeam">
+                            <% for(var i = 0 ; i < questionTeam.length; i++ ) { %>
+                            <div class="question<%= i+1 %> ">
+                                <div class="questionTitle">
+                                    <span class="posi">Q<%= i+1 %></span>
+                                    <%= questionTeam[i].questTitle %>
+                                    <% if(questionTeam[i].isMust ) { %>
+                                    <span class="isMust"><%= '*' %></span>
+                                    <% } %>
+                                </div>
+                                <% if(questionTeam[i].questType == 1 ) { %>  <!--单选题-->
+                                <div class="questOptTeam">
+                                    <% for(var j = 0 ; j < questionTeam[i].questOption.length ; j++ )  { %>
+                                    <label><input type="radio" name=" question<%= i+1 %>" ><%= questionTeam[i].questOption[j] %></label>  <!--第几题-->
+                                    <% } %>
+                                </div>
+                                <% } %>
+
+                                <% if(questionTeam[i].questType == 2 ) { %>
+                                <div class="questOptTeam">
+                                    <% for( var j = 0 ; j < questionTeam[i].questOption.length ; j++ )  { %>
+                                    <label><input type="checkbox" name="question<%= i+1 %>_<%= j+1%>" ><%= questionTeam[i].questOption[j] %></label>  <!--第几题-->
+                                    <% } %>
+                                </div>
+                                <% } %>
+
+                                <% if(questionTeam[i].questType == 3 ) { %>
+                                <div class="questAnsContainer">
+                                    <label><textarea name="question<%= i + 1%>"></textarea></label>
+                                </div>
+                                <% } %>
+                            </div>
+                            <% } %>
+                        </fieldset>
+                        <footer>
+                            <input type="button" value="提交问卷" id="submit">
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>  <!--模版-->
+    <script src="js/config.js"></script>
+    <script>  //判断活动问卷，并渲染
+
+
+        var compiled = _.template(document.querySelector('#template').innerHTML);
+        //判断渲染哪个页面
+
+        var activeResearchId = localStorage.activeResearchId;
+
+        console.log(activeResearchId);
+
+
+
+        var paperMsg = JSON.parse(localStorage.paperMsg);
+
+
+
+        for(var i = 0 , len = paperMsg.length ; i < len ; i++) {
+
+            if(activeResearchId == paperMsg[i].researchId) {
+
+                break;  //跳出循环，i保存活动问卷的下标
+            }
+        }
+
+
+        document.body.innerHTML += compiled(paperMsg[i]);  //用活动问卷对象渲染
+
+    </script>
+    <script src="js/answerQuestionnaire/answerQuestionnaire.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

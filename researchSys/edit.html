@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>问卷编辑页</title>
+		<link rel="stylesheet" href="css/editQuestionnaire/edit.css">
+        <link rel="stylesheet" type="text/css" href="css/editQuestionnaire/calendar.css">
+	</head>
+	<body>
+	<script>
+		var lg = window.localStorage,
+				before = lg.getItem('paperMsg');
+		var papers = JSON.parse(before);
+	</script>
+    <header>
+        <h1><a  href="questList.html">问卷管理</a></h1><h2>我的问卷</h2>
+    </header>
+    <div class="questionnaireList">
+		<div id="middle-content">
+			<div class="edit-block">
+				<h3 id="paper-title" contenteditable="true">title</h3>
+				<div id="question-list">
+					<div class="question-kind" style="display: none;">
+						<span class="add-dan">单选题
+                        <em class="em_1"></em>
+                        <em class="em_2"></em>
+                    </span>
+						<span class="add-duo">多选题
+                        <em class="em_1"></em>
+                        <em class="em_2"></em>
+                    </span>
+						<span class="add-textrea">文本题
+                        <em class="em_1"></em>
+                        <em class="em_2"></em>
+                    </span>
+					</div>
+
+					<div class="add-btn">
+						<span class="btn-font">添加问题</span>
+					</div>
+				</div>
+				<div id="bottom-function">
+					<label for="end-date">问卷截止日期</label>
+					<input type="text" id="end-date">
+
+					<div class="right-btn-group">
+						<button id="save">保存问卷</button>
+						<button id="announce">发布问卷</button>
+					</div>
+				</div>
+			</div>
+		</div>
+    <script type="text/template" id="hasQuests">
+        <% var paperId = window.localStorage.getItem('activeResearchId');
+        for(var i=0,len=papers.length;i<len;i++){
+        if(papers[i].researchId==paperId){
+        for(var j=0,plen=papers[i].questionTeam.length;j<plen;j++){ %>
+        <!--单选题-->
+        <% if(papers[i].questionTeam[j].questType==1) { %>
+        <div class='each-question-wrap'>
+            <p class='q-top'>Q<%= j+1 %> <span class='xx-ct'><%= papers[i].questionTeam[j].questTitle %></span></p>
+            <input type='hidden' name='questType' value='1'>
+            <% for(var k=0,qlen=papers[i].questionTeam[j].questOption.length;k<qlen;k++){ %>
+            <p class='each-option-single'><span class='xx-ct'><%= papers[i].questionTeam[j].questOption[k] %></span><i class='cha'>x</i></p>
+            <% } %>
+            <p id='add-question-op'>+</p>
+											<span class='bottom-handler' style='display: none;'>
+                                                <span class='up btn'>上移</span>
+											<span class='down btn'>下移</span>
+											<span class='repeat btn'>复用</span>
+											<span class='delete btn'>删除</span>
+											</span>
+        </div>
+        <!--多选题-->
+        <% }else if(papers[i].questionTeam[j].questType==2){ %>
+
+        <div class='each-question-wrap'>
+            <p class='q-top'>Q<%= j+1 %> <span class='xx-ct'><%= papers[i].questionTeam[j].questTitle %></span></p>
+            <input type='hidden' name='questType' value='2'>
+            <% for(var k=0,qlen=papers[i].questionTeam[j].questOption.length;k<qlen;k++){ %>
+            <p class='each-option-multiple'><span class='xx-ct'><%= papers[i].questionTeam[j].questOption[k] %></span><i class='cha'>x</i></p>
+            <% } %>
+            <p id='add-question-op'>+</p>
+                                                        <span class='bottom-handler' style='display: none;'>
+                                                            <span class='up btn'>上移</span>
+                                                        <span class='down btn'>下移</span>
+                                                        <span class='repeat btn'>复用</span>
+                                                        <span class='delete btn'>删除</span>
+                                                        </span>
+        </div>
+        <!--文本题-->
+        <% }else { %>
+
+        <div class='each-question-wrap'>
+            <p class='q-top'>Q<%= j+1 %> <span class='xx-ct'><%= papers[i].questionTeam[j].questTitle %></span></p>
+            <input type='hidden' name='questType' value='3'>
+                                            <span id='isMustWrapper'>
+                                                <% if(papers[i].questionTeam[j].isMust){ %>
+                                                   <input type='checkbox' id='isMust' checked/><label for="isMust">是否必填</label>
+
+                                                <%}else{%>
+                                                    <input type='checkbox' id='isMust'/><label for="isMust">是否必填</label>
+
+                                                <%}%>
+
+                                            </span>
+            <textarea class='text-input' name=''></textarea>
+                                            <span class='bottom-handler' style='display: none;'>
+                                        <span class='up btn'>上移</span>
+                                        <span class='down btn'>下移</span>
+                                        <span class='repeat btn'>复用</span>
+                                        <span class='delete btn'>删除</span>
+                                        </span>
+        </div>
+        <% } %>
+        <% } %>
+        <% } %>
+        <% } %>
+    </script>
+    <script type="text/template" id="researchTitle">
+        <% var paperId = window.localStorage.getItem('activeResearchId');
+        for(var i=0,len=papers.length;i<len;i++){
+        if(papers[i].researchId==paperId){ %>
+            <% if(papers[i].researchTitle==null){print('请输入标题');break;}
+            else{print(papers[i].researchTitle);break;} %>
+        <%
+            }else if(i==len-1){
+            print('请输入标题')
+        }}
+        %>
+
+
+    </script>
+    <script type="text/template" id="deadline">
+
+        <%
+        var date = new Date(),
+        y = date.getFullYear(),
+        m = date.getMonth()+1,
+        d = date.getDate();
+        var currentTime = y +'-'+m+'-'+d;
+
+        var paperId = window.localStorage.getItem('activeResearchId');
+        for(var i=0,len=papers.length;i<len;i++){
+        var deadline = papers[i].deadline;
+        if(papers[i].researchId==paperId){ %>
+            <% if(deadline==null&&deadline==""){print(currentTime);break;}
+            else{print(deadline);break;}  %>
+        <% } else if(i==len-1){
+        print('请点击设置日期');
+        }%>
+        <% } %>
+    </script>
+		<script src="./node_modules/requirejs/require.js" data-main="./js/edit.js"></script>
+    <script src="./js/questionnaireList/jquery1.10.2.min.js.js"></script>
+    <script src="./js/calendar.js"></script>
+	</body>
+
+</html>

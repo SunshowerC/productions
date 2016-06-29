@@ -1,0 +1,36 @@
+
+header {
+    background-color: #ee7419;
+    font-family: "Microsoft YaHei" , Georgia , sans-serif;
+    color: white;
+}
+header h1, header h2 {
+    display: inline-block;
+    height: 50px;
+    font-weight: normal;
+    line-height: 50px;
+    margin-left: 80px;
+}
+header h1 {
+    font-size: 26px;
+}
+header h1 a {
+    color:white;
+    text-decoration: none;
+}
+
+header h1 a:before {
+    content: '?';
+    text-align: center;
+    display: inline-block;
+    width: 26px;
+    line-height: 1;
+    background: #fff;
+    color: #ee7419;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+header h2 {
+    font-size: 19px;
+    font-weight: normal;
+}

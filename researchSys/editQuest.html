@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>问卷编辑页</title>
+    <link rel="stylesheet" href="css/editQuestionnaire/edit.css">
+</head>
+<body>
+    <div class="top-wrapper">
+        <div class="title">问卷管理</div>
+        我的问卷
+    </div>
+    <div id="middle-content">
+        <div class="edit-block">
+            <h3 id="paper-title" contenteditable="true">title</h3>
+            <div id="question-list">
+                <div class="question-kind" style="display: none;">
+                    <span class="add-dan">单选题
+                        <em class="em_1"></em>
+                        <em class="em_2"></em>
+                    </span>
+                    <span class="add-duo">多选题
+                        <em class="em_1"></em>
+                        <em class="em_2"></em>
+                    </span>
+                    <span class="add-textrea">文本题
+                        <em class="em_1"></em>
+                        <em class="em_2"></em>
+                    </span>
+                </div>
+
+                <div class="add-btn">
+                    <span class="btn-font">添加问题</span>
+                </div>
+            </div>
+            <div id="bottom-function">
+                <label for="end-date">问卷截止日期</label>
+                <input type="text" id="end-date">
+
+                <div class="right-btn-group">
+                    <button id="save">保存问卷</button>
+                    <button id="announce">发布问卷</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./node_modules/requirejs/require.js" data-main="./js/edit.js"></script>
+</body>
+</html>
